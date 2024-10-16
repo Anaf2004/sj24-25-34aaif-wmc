@@ -1,0 +1,84 @@
+/* Allgemeine Stile */ 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Helleres Grau als Hintergrund */
+    color: #333; /* Dunkle Schriftfarbe für gute Lesbarkeit */
+    margin: 0;
+    padding: 20px; /* Innenabstand */
+}
+
+/* Type Selector - Styling für h1, h2 und h3 */
+h1 {
+    text-align: center; /* Zentriert die Hauptüberschrift */
+    color: #1a73e8; /* Blauer Farbton */
+    margin-bottom: 30px; /* Abstand nach unten */
+    font-size: 2.5em; /* Größere Schriftgröße */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Schatten für den Text */
+}
+
+h2, h3 {
+    color: #444; /* Dunklerer Farbton für Unterüberschriften */
+    margin-top: 30px; /* Abstand nach oben */
+    border-bottom: 2px solid #1a73e8; /* Unterstrich unter den Überschriften */
+    padding-bottom: 10px; /* Abstand nach unten */
+}
+
+/* Class Selector - Styling für hervorgehobene Listenelemente */
+.highlight {
+    background-color: #ffeb3b; /* Gelber Hintergrund */
+    font-weight: bold; /* Fettdruck */
+    padding: 5px; /* Innenabstand */
+}
+
+/* Descendant Selector - Styling für ul li Elemente */
+ul {
+    list-style-type: none; /* Entfernt die Aufzählungszeichen */
+    padding: 0; /* Entfernt den Innenabstand */
+}
+
+li {
+    background-color: #fff; /* Weißer Hintergrund für Listenelemente */
+    border: 2px solid #ddd; /* Grauer Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
+    padding: 15px; /* Erhöhter Innenabstand */
+    margin: 15px 0; /* Abstand zwischen den Listen */
+    transition: background-color 0.3s; /* Übergangseffekt für den Hintergrund */
+}
+
+/* Pseudo-Class Selector - Stil für Links, wenn sie hovered werden */
+a:hover {
+    color: #d32f2f; /* Rote Farbe beim Hover */
+    text-decoration: underline; /* Unterstreichen beim Hover */
+}
+
+/* Bild */
+img[alt] {
+    float: right; /* Bild nach rechts verschieben */
+    height: 300px; /* Höhe des Bildes */
+    margin-left: 15px; /* Abstand zwischen Bild und Text */
+    border: 5px solid #1a73e8; /* Blauer Rahmen um das Bild */
+    border-radius: 10px; /* Abgerundete Ecken für das Bild */
+}
+
+/* Abstand zwischen Absätzen */
+p {
+    line-height: 1.8; /* Zeilenhöhe für bessere Lesbarkeit */
+    margin-bottom: 30px; /* Abstand nach unten */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    img {
+        float: none; /* Bild wird nicht mehr gefloatet */
+        display: block; /* Bild wird als Blockelement angezeigt */
+        margin: 20px auto; /* Zentriert das Bild */
+    }
+
+    h1 {
+        font-size: 2em; /* Kleinere Schriftgröße auf mobilen Geräten */
+    }
+    
+    body {
+        padding: 10px; /* Weniger Innenabstand auf mobilen Geräten */
+    }
+}
