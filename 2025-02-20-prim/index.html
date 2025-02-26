@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primzahl Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff7eb3, #ff758c);
+            color: white;
+            margin-top: 100px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Primzahl Checker</h1>
+    <form onsubmit="event.preventDefault(); checkPrime();">
+        <label for="numberInput">Zahl eingeben:</label>
+        <input type="number" id="numberInput" name="numberInput" placeholder="Zahl eingeben" required>
+        <button type="submit">Prüfen</button>
+    </form>
+    <div id="result" role="status" aria-live="polite"></div>
+
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function checkPrime() {
+            const numberInput = document.getElementById("numberInput");
+            const number = parseInt(numberInput.value, 10);
+            const resultDiv = document.getElementById("result");
+            
+            if (isNaN(number)) {
+                resultDiv.textContent = "Bitte eine gültige Zahl eingeben.";
+                resultDiv.style.color = "yellow";
+                return;
+            }
+            
+            if (isPrime(number)) {
+                resultDiv.textContent = `${number} ist eine Primzahl ✅`;
+                resultDiv.style.color = "lightgreen";
+            } else {
+                resultDiv.textContent = `${number} ist keine Primzahl ❌`;
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
